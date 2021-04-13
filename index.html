@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Kareem | Animated Website Design</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <section>
+        <img src="img/mosque.jpg" class="mosque">
+        <header>
+            <a href="#" class="logo">Ramadan</a>
+            <div class="toggle"></div>
+            <ul class="navigation">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+
+        <div class="content">
+            <div class="textBox">
+                <h2>Happy Ramadan Kareem</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, aspernatur nulla quibusdam odit debitis cupiditate sit quis voluptas, adipisci magni unde labore natus vel explicabo, obcaecati ratione quae cumque. Laudantium.</p>
+                <a href="#">Read More</a>
+            </div>   
+        </div>
+
+        <ul class="sci">
+            <li><a href="#"><img src="./img/facebook.svg"></a></li>
+            <li><a href="#"><img src="./img/twitter.svg"></a></li>
+            <li><a href="#"><img src="./img/instagram.svg"></a></li>
+        </ul>
+        
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function() {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
