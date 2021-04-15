@@ -15,6 +15,7 @@ section {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    overflow-x: hidden;
 }
 
 header {
@@ -36,6 +37,20 @@ header .logo {
     font-size: 2em;
     text-decoration: none;
     font-weight: 800;
+    opacity: 0;
+    animation: slide-left 0.5s linear forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
 header ul {
@@ -57,7 +72,22 @@ header ul li a {
     padding: 8px 18px;
     text-decoration: none;
     user-select: none;
+    opacity: 0;
+    animation: slide-top 0.5s linear forwards;
+    animation-delay: calc(0.2s * var(--i));
 }
+
+@keyframes slide-top {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 
 header ul li a.active, header ul li a:hover{
     background: #0169b2;
@@ -79,13 +109,30 @@ header ul li a.active, header ul li a:hover{
     color: #0169b2;
     font-size: 3.5em;
     margin-bottom: 10px;
-    line-height: 1.2em;font-weight: 700;
-}
+    line-height: 1.2em;
+    font-weight: 700;
+    opacity: 0;
+    animation: slide-right 0.5s linear forwards;
+    animation-delay: 1.5s;
+    }
+
+    @keyframes slide-right {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
 
 .content .textBox p {
     font-size: 1.2em;
     color: #333;
-
+    opacity: 0;
+    animation: slide-left 0.5s linear forwards;
+    animation-delay: 1.75s;
 }
 
 .content .textBox a {
@@ -94,11 +141,14 @@ header ul li a.active, header ul li a:hover{
     padding: 15px 30px;
     background: #ff5e8e;
     color: #fff;
-    fontsize: 1.2em;
+    font-size: 1.2em;
     border-radius: 40px;
     font-weight: 700;
     letter-spacing: 1px;
     text-decoration: none;
+    opacity: 0;
+    animation: slide-top 0.5s linear forwards;
+    animation-delay: 2s;
 }
 
 .sci {
@@ -125,6 +175,9 @@ header ul li a.active, header ul li a:hover{
     justify-content: center;
     align-items: center;
     transition: 0.2s ease-in-out;
+    opacity: 0;
+    animation: slide-right 0.5s linear forwards;
+    animation-delay: calc(0.2s * var(--i));
 }
 
 .sci li a img {
@@ -142,6 +195,18 @@ header ul li a.active, header ul li a:hover{
     bottom: 0;
     right: 0;
     max-width: 700px;
+    opacity: 0;
+    animation: fade-in 1s linear forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 /*responsividade*/
@@ -216,9 +281,9 @@ header ul li a.active, header ul li a:hover{
     }
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
     .mosque {
-        opacity: 0.4;
+        opacity: 0.4 !important;
     }
 
 }
